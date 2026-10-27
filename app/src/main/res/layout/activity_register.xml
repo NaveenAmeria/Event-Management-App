@@ -1,6 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/registerScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:scrollbars="none"
+    android:overScrollMode="never"
+    android:background="#101426">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="28dp"
+        android:descendantFocusability="beforeDescendants">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EVENTIFY"
+            android:textColor="#A78BFA"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:letterSpacing="0.15" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Create your account"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="24dp"
+            android:text="Join Eventify and make every event count."
+            android:textColor="#A7AEC4"
+            android:textSize="14sp" />
+
+        <RadioGroup
+            android:id="@+id/rgRegisterRole"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbRegisterStudent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:buttonTint="#A78BFA"
+                android:text="Student"
+                android:textColor="#FFFFFF" />
+
+            <RadioButton
+                android:id="@+id/rbRegisterOrganizer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:buttonTint="#A78BFA"
+                android:text="Organizer"
+                android:textColor="#FFFFFF" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="18dp"
+            android:hint="Full name"
+            android:maxLines="1"
+            android:inputType="textPersonName"
+            android:padding="14dp"
+            android:backgroundTint="#A78BFA"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#9CA3AF" />
+
+        <EditText
+            android:id="@+id/etRegisterEmail"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="12dp"
+            android:hint="Email address"
+            android:maxLines="1"
+            android:inputType="textEmailAddress"
+            android:padding="14dp"
+            android:backgroundTint="#A78BFA"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#9CA3AF" />
+
+        <EditText
+            android:id="@+id/etRegisterPassword"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="12dp"
+            android:hint="Password (at least 6 characters)"
+            android:maxLines="1"
+            android:inputType="textPassword"
+            android:padding="14dp"
+            android:backgroundTint="#A78BFA"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#9CA3AF" />
+
+        <EditText
+            android:id="@+id/etOrganizerId"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="12dp"
+            android:hint="Organizer ID (required for organizers)"
+            android:maxLines="1"
+            android:inputType="text"
+            android:padding="14dp"
+            android:backgroundTint="#A78BFA"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#9CA3AF"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btnCreateAccount"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="24dp"
+            android:text="Create Account"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:backgroundTint="#7C3AED" />
+
+        <Button
+            android:id="@+id/btnBackToLogin"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:text="Back to Sign In"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#292F47" />
+
+    </LinearLayout>
+</ScrollView>

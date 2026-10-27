@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/createEventScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:scrollbars="none"
+    android:background="#101426">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Top Navigation & Step Header -->
+        <LinearLayout
+            android:id="@+id/llCreateHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tvBackTop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="‹"
+                    android:textColor="#FFFFFF"
+                    android:textSize="26sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Create Event"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="32dp"
+                    android:layout_height="32dp" />
+            </LinearLayout>
+
+            <!-- 3-Step Indicator Bar -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tvStep1Indicator"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:background="#7C3AED"
+                    android:text="1. Details"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:textSize="12sp" />
+
+                <View
+                    android:layout_width="8dp"
+                    android:layout_height="2dp"
+                    android:background="#292F47" />
+
+                <TextView
+                    android:id="@+id/tvStep2Indicator"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:background="#1A2036"
+                    android:text="2. Location"
+                    android:textColor="#A7AEC4"
+                    android:textStyle="bold"
+                    android:textSize="12sp" />
+
+                <View
+                    android:layout_width="8dp"
+                    android:layout_height="2dp"
+                    android:background="#292F47" />
+
+                <TextView
+                    android:id="@+id/tvStep3Indicator"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:background="#1A2036"
+                    android:text="3. Tickets"
+                    android:textColor="#A7AEC4"
+                    android:textStyle="bold"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ==================== STEP 1: BASIC INFORMATION ==================== -->
+        <LinearLayout
+            android:id="@+id/step1Container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Event Title"
+                android:textColor="#A7AEC4"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etEventTitle"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="6dp"
+                android:hint="e.g. Tech Fest 2025"
+                android:maxLines="1"
+                android:inputType="textCapWords"
+                android:padding="14dp"
+                android:background="#1A2036"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#6B7280" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Category"
+                android:textColor="#A7AEC4"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spCategory"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="6dp"
+                android:background="#1A2036"
+                android:padding="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Description"
+                android:textColor="#A7AEC4"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etEventDescription"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_marginTop="6dp"
+                android:gravity="top|start"
+                android:hint="Describe workshops, speakers, highlights..."
+                android:inputType="textMultiLine|textCapSentences"
+                android:padding="14dp"
+                android:background="#1A2036"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#6B7280" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Event Banner Theme"
+                android:textColor="#A7AEC4"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/bannerPreviewBox"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="#3B1F6E"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tvBannerEmoji"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🎉  ✨  🎶"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Event Banner Preview (Auto-styled by Category)"
+                    android:textColor="#DDD6FE"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnStep1Next"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginTop="24dp"
+                android:text="Next"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#7C3AED" />
+        </LinearLayout>
+
+        <!-- ==================== STEP 2: DATE, TIME & LOCATION ==================== -->
+        <LinearLayout
+            android:id="@+id/step2Container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date"
+                android:textColor="#A7AEC4"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etEventDate"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="6dp"
+                android:hint="e.g. 15 Mar 2025 (Tap to pick)"
+                android:focusable="false"
+                android:clickable="true"
+                android:maxLines="1"
+                android:padding="14dp"
+                android:background="#1A2036"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#6B7280" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="Start Time"
+                android:textColor="#A7AEC4"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etStartTime"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="6dp"
+                android:hint="e.g. 10:00 AM (Tap to pick)"
+                android:focusable="false"
+                android:clickable="true"
+                android:maxLines="1"
+                android:padding="14dp"
+                android:background="#1A2036"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#6B7280" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="End Time"
+                android:textColor="#A7AEC4"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etEndTime"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="6dp"
+                android:hint="e.g. 5:00 PM (Tap to pick)"
+                android:focusable="false"
+                android:clickable="true"
+                android:maxLines="1"
+                android:padding="14dp"
+                android:background="#1A2036"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#6B7280" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="Location / Venue"
+                android:textColor="#A7AEC4"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etLocation"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="6dp"
+                android:hint="e.g. University Auditorium"
+                android:maxLines="1"
+                android:inputType="textCapWords"
+                android:padding="14dp"
+                android:background="#1A2036"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#6B7280" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="Address"
+                android:textColor="#A7AEC4"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etAddress"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="6dp"
+                android:hint="e.g. 123 College Road, City"
+                android:maxLines="1"
+                android:inputType="textPostalAddress"
+                android:padding="14dp"
+                android:background="#1A2036"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#6B7280" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnStep2Back"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:text="Back"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#292F47" />
+
+                <Button
+                    android:id="@+id/btnStep2Next"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:text="Next"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#7C3AED" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ==================== STEP 3: TICKET DETAILS ==================== -->
+        <LinearLayout
+            android:id="@+id/step3Container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ticket Type"
+                android:textColor="#A7AEC4"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spTicketType"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="6dp"
+                android:background="#1A2036"
+                android:padding="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="Price (₹)"
+                android:textColor="#A7AEC4"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etPrice"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="6dp"
+                android:hint="e.g. 299 (Enter 0 for Free)"
+                android:maxLines="1"
+                android:inputType="number"
+                android:padding="14dp"
+                android:background="#1A2036"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#6B7280" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="Total Tickets"
+                android:textColor="#A7AEC4"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etTotalTickets"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="6dp"
+                android:hint="e.g. 200"
+                android:maxLines="1"
+                android:inputType="number"
+                android:padding="14dp"
+                android:background="#1A2036"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#6B7280" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="Booking Deadline"
+                android:textColor="#A7AEC4"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etBookingDeadline"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="6dp"
+                android:hint="e.g. 14 Mar 2025 (Tap to pick)"
+                android:focusable="false"
+                android:clickable="true"
+                android:maxLines="1"
+                android:padding="14dp"
+                android:background="#1A2036"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#6B7280" />
+
+            <Switch
+                android:id="@+id/swEnableQr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:checked="true"
+                android:padding="12dp"
+                android:background="#1A2036"
+                android:text="Enable QR Code Ticket\nGenerate QR code for each ticket"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp" />
+
+            <Switch
+                android:id="@+id/swShowInFeed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:checked="true"
+                android:padding="12dp"
+                android:background="#1A2036"
+                android:text="Show in Student Feed\nMake this event visible to students"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnStep3Back"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:text="Back"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#292F47" />
+
+                <Button
+                    android:id="@+id/btnSubmitEvent"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:text="Create Event"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#7C3AED" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ==================== STEP 4: EVENT CREATED SUCCESSFULLY ==================== -->
+        <LinearLayout
+            android:id="@+id/stepSuccessContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingTop="24dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:gravity="center"
+                android:background="#10B981"
+                android:text="✓"
+                android:textColor="#FFFFFF"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:gravity="center"
+                android:text="Event Created\nSuccessfully!"
+                android:textColor="#FFFFFF"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="Your event is now live and visible to students."
+                android:textColor="#A7AEC4"
+                android:textSize="14sp" />
+
+            <!-- Created Event Preview Card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="vertical"
+                android:background="#1A2036"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:gravity="center"
+                    android:background="#3B1F6E"
+                    android:text="🎉  LIVE EVENT"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvSuccessEventTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="Tech Fest 2025"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvSuccessEventDateTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:textColor="#A7AEC4"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/tvSuccessEventLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textColor="#A7AEC4"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/tvSuccessEventPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="₹299"
+                    android:textColor="#A78BFA"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnGoToMyEvents"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginTop="28dp"
+                android:text="Go to My Events"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#7C3AED" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

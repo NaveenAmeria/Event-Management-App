@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Event Management App</string>
+    <string name="welcome_message">Welcome to Event Management App</string>
 </resources>
